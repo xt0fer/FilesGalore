@@ -14,20 +14,12 @@ public class ReadingFiles { }
 class ReadUsingBufferedReader {
 
     // main driver method
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
 
-        // File path is passed as parameter
-        File file = new File(
-                "test.txt");
-
-        // Note: Double backquote is to avoid compiler
-        // interpret words
-        // like \test as \t (ie. as a escape sequence)
+        File file = new File("test.txt");
 
         // Creating an object of BufferedReader class
-        BufferedReader br
-                = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file));
 
         // Declaring a string variable
         String st;
@@ -46,18 +38,14 @@ class ReadUsingBufferedReader {
 class ReadUsingFileReader {
 
     // Main driver method
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
 
         // Passing the path to the file as a parameter
-        FileReader fr = new FileReader(
-                "test.txt");
+        FileReader fr = new FileReader("test.txt");
 
-        // Declaring loop variable
         int i;
         // Holds true till there is nothing to read
         while ((i = fr.read()) != -1)
-
             // Print all the content of a file
             System.out.print((char)i);
     }
@@ -68,8 +56,7 @@ class ReadUsingFileReader {
 // using Scanner Class
 class ReadFromFileUsingScanner
 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         // pass the path to the file as a parameter
         File file = new File("test.txt");
         Scanner sc = new Scanner(file);
@@ -84,9 +71,7 @@ class ReadFromFileUsingScanner
 // without using loop
 class ReadingEntireFileWithoutLoop
 {
-    public static void main(String[] args)
-            throws FileNotFoundException
-    {
+    public static void main(String[] args) throws FileNotFoundException {
         File file = new File("test.txt");
         Scanner sc = new Scanner(file);
 
@@ -101,26 +86,18 @@ class ReadingEntireFileWithoutLoop
 // using nio.File
 class ReadFileIntoList
 {
-    public static List<String> readFileInList(String fileName)
-    {
-
+    public static List<String> readFileInList(String fileName) {
         List<String> lines = Collections.emptyList();
-        try
-        {
-            lines =
-                    Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
+        try {
+            lines = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
         }
-
-        catch (IOException e)
-        {
-
+        catch (IOException e) {
             // do something
             e.printStackTrace();
         }
         return lines;
     }
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         List l = readFileInList("test.txt");
 
         Iterator<String> itr = l.iterator();
@@ -134,15 +111,13 @@ class ReadFileIntoList
 // as string in Java
 class ReadTextAsString {
 
-    public static String readFileAsString(String fileName)throws Exception
-    {
+    public static String readFileAsString(String fileName)throws Exception {
         String data = "";
         data = new String(Files.readAllBytes(Paths.get(fileName)));
         return data;
     }
 
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         String data = readFileAsString("test.txt");
         System.out.println(data);
     }

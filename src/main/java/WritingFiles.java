@@ -44,8 +44,7 @@ class WriteUsingWriteString {
 class WriteUsingFileWriter {
 
     // Main driver method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
         // Content to be assigned to a file
         // Custom input just for illustratinon purposes
@@ -53,23 +52,18 @@ class WriteUsingFileWriter {
 
         // Try block to check if exception occurs
         try {
-
             // Create a FileWriter object
             // to write in the file
             FileWriter fWriter = new FileWriter(
                     "demo3.txt");
-
             // Writing into file
             // Note: The content taken above inside the
             // string
             fWriter.write(text);
-
             // Printing the contents of a file
             System.out.println(text);
-
             // Closing the file writing connection
             fWriter.close();
-
             // Display message for successful execution of
             // program on the console
             System.out.println(
@@ -78,7 +72,6 @@ class WriteUsingFileWriter {
 
         // Catch block to handle if exception occurs
         catch (IOException e) {
-
             // Print the exception
             System.out.print(e.getMessage());
         }
@@ -90,9 +83,7 @@ class WriteUsingFileWriter {
 class WriteUsingBufferedWriter {
 
     // Main driver method
-    public static void main(String[] args)
-    {
-
+    public static void main(String[] args) {
         // Assigning the file content
         // Note: Custom contents taken as input to
         // illustrate
@@ -100,19 +91,15 @@ class WriteUsingBufferedWriter {
 
         // Try block to check for exceptions
         try {
-
             // Step 1: Create an object of BufferedWriter
-            BufferedWriter f_writer
-                    = new BufferedWriter(new FileWriter(
-                    "demo2.txt"));
+            BufferedWriter f_writer = new BufferedWriter(
+                    new FileWriter("demo2.txt"));
 
             // Step 2: Write text(content) to file
             f_writer.write(text);
-
             // Step 3: Printing the content inside the file
             // on the terminal/CMD
             System.out.print(text);
-
             // Step 4: Display message showcasing
             // successful execution of the program
             System.out.print(
@@ -121,10 +108,8 @@ class WriteUsingBufferedWriter {
             // Step 5: Close the BufferedWriter object
             f_writer.close();
         }
-
         // Catch block to handle if exceptions occurs
         catch (IOException e) {
-
             // Print the exception on console
             // using getMessage() method
             System.out.print(e.getMessage());
@@ -139,8 +124,7 @@ class WriteUsingBufferedWriter {
 class WriteUsingFileOutputStream {
 
     // Main driver method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args)  {
         // Assign the file content
         String fileContent = "Zip Code Wilmington Rocks.";
         FileOutputStream outputStream = null;
